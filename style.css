@@ -2,22 +2,22 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Prevents elements from extending beyond the screen */
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px; /* Offset so navbar doesn't cover section titles */
+  scroll-padding-top: 70px;
 }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #f3f1e9; /* Off-white/Cream */
+  background-color: #f3f1e9;
   color: #1a2a3a;
   line-height: 1.6;
 }
 
-/* 2. STICKY NAVBAR */
+/* 2. STICKY NAVBAR - FIXED SECTION */
 .navbar {
   background-color: #1a2a3a;
   position: sticky;
@@ -27,12 +27,28 @@ body {
   padding: 15px 0;
 }
 
-.nav-links {
+/* This must be OUTSIDE the media query to work on desktop */
+.nav-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* Pushes Name left, Links right */
+  align-items: center;
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-family: "Courier Prime", monospace;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a {
@@ -42,19 +58,24 @@ body {
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
+  transition: opacity 0.3s;
 }
 
-/* 3. HERO SECTION (Typewriter + Bubbles) */
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* 3. HERO SECTION */
 .hero {
-  position: relative; /* Essential for absolute bubbles inside */
+  position: relative;
   background: linear-gradient(to right, #497d6a, #2c3e50);
   color: white;
   text-align: center;
-  height: 450px; /* Fixed height for the "stage" */
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Keeps bubbles inside the banner */
+  overflow: hidden;
 }
 
 #bubble-container {
@@ -63,17 +84,17 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Sits behind the text */
+  z-index: 1;
 }
 
 #typewriter {
   position: relative;
-  z-index: 2; /* Sits in front of the bubbles */
+  z-index: 2;
   font-family: "Courier Prime", monospace !important;
   font-size: clamp(40px, 8vw, 70px);
   letter-spacing: 5px;
-  text-transform: none; /* Keeps it "welcome" (lowercase) */
-  pointer-events: none; /* Mouse movements "pass through" text to hit bubbles */
+  text-transform: none;
+  pointer-events: none;
 }
 
 /* 4. MAIN CONTENT LAYOUT */
@@ -92,7 +113,7 @@ body {
 
 /* 5. PROFILE & TEXT ALIGNMENT */
 .profile-container {
-  flex: 0 0 200px; /* Prevents image from "exploding" or shrinking */
+  flex: 0 0 200px;
 }
 
 .avatar {
@@ -105,7 +126,7 @@ body {
 }
 
 .text-content {
-  flex: 1; /* Makes text fill the remaining space */
+  flex: 1;
 }
 
 .text-content p {
@@ -161,8 +182,14 @@ h2 {
     margin-bottom: 20px;
   }
 
-  .nav-links {
-    justify-content: center;
+  .nav-container {
+    padding: 0 20px;
+    flex-direction: column; /* Stacks name above links on small phones */
+    gap: 10px;
+  }
+
+  .nav-links a {
+    margin: 0 10px;
   }
 
   .zigzag {
