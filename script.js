@@ -1,6 +1,6 @@
 // --- 1. TYPEWRITER LOGIC ---
 const text = "welcome";
-const typeSpeed = 150;
+const typeSpeed = 750;
 let i = 0;
 
 function typeWriter() {
