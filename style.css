@@ -1,0 +1,321 @@
+/* 1. RESET & GLOBAL DEFAULTS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f3f1e9;
+  color: #1a2a3a;
+  line-height: 1.6;
+}
+
+/* 2. STICKY NAVBAR - FIXED SECTION */
+.navbar {
+  background-color: #1a2a3a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px 0;
+}
+
+/* This must be OUTSIDE the media query to work on desktop */
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between; /* Pushes Name left, Links right */
+  align-items: center;
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-family: "Courier Prime", monospace;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* 3. HERO SECTION */
+.hero {
+  position: relative;
+  background: linear-gradient(to right, #497d6a, #2c3e50);
+  color: white;
+  text-align: center;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#typewriter {
+  position: relative;
+  z-index: 2;
+  font-family: "Courier Prime", monospace !important;
+  font-size: clamp(40px, 8vw, 70px);
+  letter-spacing: 5px;
+  text-transform: none;
+  pointer-events: none;
+}
+
+/* 4. MAIN CONTENT LAYOUT */
+.content {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 100px;
+}
+
+/* 5. PROFILE & TEXT ALIGNMENT */
+.profile-container {
+  flex: 0 0 200px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* 6. TYPOGRAPHY & DECORATION */
+h2 {
+  font-size: 24px;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.zigzag {
+  width: 60px;
+  height: 10px;
+  margin-bottom: 25px;
+  background:
+    linear-gradient(135deg, transparent 25%, #1a2a3a 25%) -5px 0,
+    linear-gradient(225deg, transparent 25%, #1a2a3a 25%) -5px 0,
+    linear-gradient(315deg, transparent 25%, #1a2a3a 25%),
+    linear-gradient(45deg, transparent 25%, #1a2a3a 25%);
+  background-size: 10px 10px;
+}
+
+.zigzag.centered {
+  margin: 0 auto 25px auto;
+}
+
+/* 7. CONTACT SECTION */
+.contact-section {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.contact-section a {
+  color: #1a2a3a;
+  font-weight: bold;
+}
+
+/* 8. RESPONSIVE DESIGN (MOBILE) */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-container {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .nav-container {
+    padding: 0 20px;
+    flex-direction: column; /* Stacks name above links on small phones */
+    gap: 10px;
+  }
+
+  .nav-links a {
+    margin: 0 10px;
+  }
+
+  .zigzag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Carousel Container Layout */
+.carousel-section {
+  padding: 60px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Scroll track containing slides */
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: none; /* Modern browser scrollbar hiding */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari scrollbar hiding */
+}
+
+/* Individual Slide Styling */
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.slide-caption {
+  padding: 15px 20px;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  text-align: left;
+}
+
+.slide-caption h3 {
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+  color: #222;
+}
+
+.slide-caption p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Interactive Slider Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.prev-btn {
+  left: -10px;
+}
+.next-btn {
+  right: -10px;
+}
+
+/* Responsive break settings */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    padding: 0 20px;
+  }
+  .prev-btn {
+    left: -15px;
+  }
+  .next-btn {
+    right: -15px;
+  }
+}

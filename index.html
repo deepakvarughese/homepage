@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Homepage</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="navbar-brand">DEEPAK VARUGHESE</div>
+
+        <div class="nav-links">
+          <a href="#hero">HOME</a>
+          <a href="#about">ABOUT ME</a>
+          <a href="#contact-section">CONTACT</a>
+        </div>
+      </div>
+    </nav>
+
+    <header id="hero" class="hero">
+      <link rel="stylesheet" />
+      <h1 id="typewriter"></h1>
+    </header>
+
+    <main class="content">
+      <section id="about" class="about-section">
+        <div class="profile-container">
+          <img src="profile.jpg" alt="Profile" class="avatar" />
+        </div>
+        <div class="text-content">
+          <h2>ABOUT ME</h2>
+          <div class="zigzag"></div>
+          <p>I am a physician epidemiologist who dabbles in code.</p>
+
+          <p>
+            My clinical interests are general practice and palliative medicine.
+          </p>
+          <p>
+            My Public Health Interests include Spatial Epidemiology and GIS.
+          </p>
+          <p>
+            My tech stack is predominantly R, QGIS and SQL for Data Science and
+            Visualization. I am currently learning D3 and JavaScript and this
+            page is a part of that effort.
+          </p>
+          <p>
+            As a physician who codes i think i have a unique vantage point to
+            help tech companies talk to medical teams and vice versa.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== VISUALIZATIONS CAROUSEL SECTION ==================== -->
+      <section id="visualizations" class="carousel-section">
+        <h2>VISUALIZATIONS</h2>
+        <div class="zigzag"></div>
+        <p class="section-subtitle">
+          Exploratory data analysis using the Palmer Penguins dataset in R.
+        </p>
+
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev-btn" aria-label="Previous slide">
+            &#10094;
+          </button>
+
+          <div class="carousel-track">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+              <img src="Bar Chart.png" alt="Bar Chart" />
+              <div class="slide-caption">
+                <h3>Bar Chart</h3>
+                <p>Species distribution across the Palmer Archipelago.</p>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <img src="Boxplots.png" alt="Boxplots" />
+              <div class="slide-caption">
+                <h3>Boxplots</h3>
+                <p>Comparison of penguin body mass variations by species.</p>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+              <img src="Correlation.png" alt="Correlation" />
+              <div class="slide-caption">
+                <h3>Correlation</h3>
+                <p>
+                  Positive linear relationship between flipper length and body
+                  mass.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+              <img src="Distribution_Stats.png" alt="Distribution_Stats" />
+              <div class="slide-caption">
+                <h3>Distribution Stats</h3>
+                <p>
+                  Penguin body mass distribution colored by quartiles with mean
+                  and SD indicators.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="carousel-slide">
+              <img src="Distributions.png" alt="Distributions" />
+              <div class="slide-caption">
+                <h3>Distributions</h3>
+                <p>
+                  Histogram rendering of overall sample body mass breakdown.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="carousel-slide">
+              <img src="Doughnut Chart.png" alt="Doughnut Chart" />
+              <div class="slide-caption">
+                <h3>Doughnut Chart</h3>
+                <p>Proportional categorical sharing of population sizes.</p>
+              </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="carousel-slide">
+              <img src="Lollipop Chart.png" alt="Lollipop Chart" />
+              <div class="slide-caption">
+                <h3>Lollipop Chart</h3>
+                <p>
+                  Clean vertical alignment comparing population counts
+                  accurately.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="carousel-slide">
+              <img
+                src="Morphological Density.png"
+                alt="Morphological Density"
+              />
+              <div class="slide-caption">
+                <h3>Morphological Density</h3>
+                <p>
+                  2D contour layout visualizing clusters of flipper length and
+                  mass variables.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="carousel-slide">
+              <img src="Raincloud Plot.png" alt="Raincloud Plot" />
+              <div class="slide-caption">
+                <h3>Raincloud Plot</h3>
+                <p>
+                  Combining raw data points, boxplots, and probability densities
+                  flawlessly.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="carousel-slide">
+              <img src="Regression.png" alt="Regression" />
+              <div class="slide-caption">
+                <h3>Regression Analysis</h3>
+                <p>
+                  Aggregated local smoothed trend curves depicting variables
+                  relative to growth.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-btn next-btn" aria-label="Next slide">
+            &#10095;
+          </button>
+        </div>
+      </section>
+      <!-- ========================================================================= -->
+      <section id="contact-section" class="contact-section">
+        <h2>Socials</h2>
+        <div class="zigzag centered"></div>
+        <p>
+          <a href="https://www.linkedin.com/in/deepakvarughese">Linkedin</a> or
+          or
+          <a
+            href="https://scholar.google.com/citations?user=hHcsCe0AAAAJ&hl=en&oi=ao"
+            >Google Scholar</a
+          >!
+        </p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
